@@ -1,19 +1,17 @@
 var twoSum = function (nums, target) {
-    const result = [];
     const outputIndex = [0, 0];
     
     for (let i = 0; i < nums.length; i++) {
 
-        for (let j = i; j < nums.length; j++) {
-            if(i !== j) {
+        for (let j = i + 1; j < nums.length; j++) {
+        
             const sum = nums[i] + nums[j];
-            result.push(sum);
-
+        
             if(nums[i] + nums[j] === target) {
                 outputIndex[0] = i;
                 outputIndex[1] = j;
             }
-            }
+
         }
 
     }
