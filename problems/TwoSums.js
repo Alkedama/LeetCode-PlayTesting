@@ -1,29 +1,23 @@
-
 var twoSum = function (nums, target) {
     const result = [];
-    const outputObj = [0, 0];
+    const outputIndex = [0, 0];
     
     for (let i = 0; i < nums.length; i++) {
 
         for (let j = i; j < nums.length; j++) {
-            if(nums[i] != nums[j]) {
+            if(i !== j) {
             const sum = nums[i] + nums[j];
             result.push(sum);
 
-            if(target === sum) {
-                if(outputObj[1] < 1) {
-                    outputObj[1] = outputObj[1] + 1;
-                } else {
-                    outputObj[0] = outputObj[0] + 1;
-                    outputObj[1] = outputObj[1] + 1;
-                }
+            if(nums[i] + nums[j] === target) {
+                outputIndex[0] = i;
+                outputIndex[1] = j;
             }
-
             }
         }
 
     }
-return result;
+return outputIndex;
 };
 
 
